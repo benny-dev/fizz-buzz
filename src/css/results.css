@@ -1,16 +1,18 @@
 .results {
   width: 50%;
   margin: auto;
-  padding: 18px;
-  padding-left: 196px;
+  /* padding: 18px; */
   padding-top: 22px;
+  display: flex;
+  justify-content: left;
 }
 
 .results__text {
   display: inline;
   font-size: 20px;
   font-family: "Cabin";
-  color: rgb(7, 2, 2, 0.4);
+  color: rgb(7, 2, 2, 0.6);
+  padding-right: 6px;
 }
 
 .results__value {
@@ -19,4 +21,10 @@
   font-weight: bold;
   font-size: 20px;
   font-family: "Cabin";
+}
+
+@media (min-width: 768px) {
+  .results {
+    padding-left: 150px;
+  }
 }

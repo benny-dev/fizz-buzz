@@ -1,9 +1,7 @@
 .history {
   width: 50%;
   margin: auto;
-  padding: 18px;
   padding-top: 98px;
-  padding-left: 196px;
 }
 
 .history__title {
@@ -20,11 +18,21 @@
   font-family: "Cabin";
   font-size: 18px;
   border-bottom: 1px solid rgba(112, 112, 112, 0.23);
-  width: 62%;
   text-align: center;
   padding: 12px;
 }
 
 .history__items li span {
   padding: 16px;
+}
+
+@media (min-width: 768) {
+  .history {
+    padding: 18px;
+    padding-left: px;
+  }
+
+  .history__items li {
+    width: 62%;
+  }
 }
