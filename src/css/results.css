@@ -1,0 +1,23 @@
+.results {
+  width: 50%;
+  margin: auto;
+  padding: 18px;
+  padding-left: 196px;
+}
+
+.results__text {
+  display: inline;
+  font-size: 20px;
+  font-family: "Cabin";
+  color: #070202;
+  opacity: 60%;
+}
+
+.results__value {
+  display: inline;
+  color: #070202;
+  opacity: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Cabin";
+}
