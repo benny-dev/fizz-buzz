@@ -10,14 +10,12 @@
   display: inline;
   font-size: 20px;
   font-family: "Cabin";
-  color: #070202;
-  opacity: 60%;
+  color: rgb(7, 2, 2, 0.4);
 }
 
 .results__value {
   display: inline;
-  color: #070202;
-  opacity: 100%;
+  color: rgb(7, 2, 2);
   font-weight: bold;
   font-size: 20px;
   font-family: "Cabin";
