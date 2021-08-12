@@ -1,0 +1,31 @@
+.history {
+  width: 50%;
+  margin: auto;
+  padding: 18px;
+  padding-top: 98px;
+  padding-left: 196px;
+}
+
+.history__title {
+  font-size: 20px;
+  font-family: "Cabin";
+  color: #070202;
+  opacity: 60%;
+}
+
+.history__items {
+  padding-left: 0;
+}
+.history__items li {
+  list-style-type: none;
+  font-family: "Cabin";
+  font-size: 18px;
+  border-bottom: 1px solid rgba(112, 112, 112, 0.23);
+  width: 62%;
+  text-align: center;
+  padding: 12px;
+}
+
+.history__items li span {
+  padding: 16px;
+}
