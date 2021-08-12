@@ -26,10 +26,11 @@
   padding: 16px;
 }
 
-@media (min-width: 768) {
+@media (min-width: 768px) {
   .history {
     padding: 18px;
-    padding-left: px;
+    padding-top: 98px;
+    padding-left: 150px;
   }
 
   .history__items li {
