@@ -1,7 +1,7 @@
 import "../css/results.css";
 
 function Result(prop) {
-  const results = prop.results[prop.results.length - 1]?.result || " ";
+  const results = prop.results[prop.results.length - 1]?.text || " ";
 
   return (
     <div>
