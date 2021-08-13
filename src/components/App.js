@@ -7,9 +7,16 @@ import History from "./History";
 function App() {
   const [txt, setTxt] = useState("");
   const [num, setNum] = useState("");
-  const results = [];
+  const [results, setResults] = useState(() => {
+    const resultsFromStorage = localStorage.getItem("results");
+    if (resultsFromStorage) {
+      return JSON.parse(resultsFromStorage);
+    }
 
-  function game_logic(val) {
+    return [];
+  });
+
+  function gameLogic(val) {
     if (val % 3 === 0 && val % 5 === 0) {
       setTxt("Fizz-Buzz");
       setNum(val);
@@ -23,16 +30,19 @@ function App() {
       setTxt(val);
       setNum(val);
     }
-  }
 
-  results.push({ result: num, text: txt });
+    const newState = [...results, { text: txt, result: num }];
+
+    setResults(newState);
+    localStorage.setItem("results", JSON.stringify(newState));
+  }
 
   return (
     <div>
       <Title />
-      <SearchBar logic={game_logic} />
+      <SearchBar logic={gameLogic} />
       <Result results={txt} />
-      <History results_list={results} />
+      <History resultsList={results} />
     </div>
   );
 }

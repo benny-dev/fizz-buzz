@@ -10,7 +10,6 @@ function SearchBar(prop) {
     const val = parseInt(number);
 
     if (!isNaN(val)) {
-      console.log("yes");
       if (val <= 100) {
         prop.logic(val);
       } else {
@@ -18,7 +17,6 @@ function SearchBar(prop) {
       }
     } else {
       swal("Error!", "Value must be a digit betweent 1 and 100", "error");
-      console.log("no");
     }
   }
 
