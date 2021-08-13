@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Title from "./Title";
 import SearchBar from "./SearchBar";
 import Result from "./Result";
 import History from "./History";
 
 function App() {
-  const [txt, setTxt] = useState("");
-  const [num, setNum] = useState("");
   const [results, setResults] = useState(() => {
     const resultsFromStorage = localStorage.getItem("results");
     if (resultsFromStorage) {
@@ -16,32 +14,31 @@ function App() {
     return [];
   });
 
-  function gameLogic(val) {
-    if (val % 3 === 0 && val % 5 === 0) {
-      setTxt("Fizz-Buzz");
-      setNum(val);
-    } else if (val % 3 === 0) {
-      setTxt("Fizz");
-      setNum(val);
-    } else if (val % 5 === 0) {
-      setTxt("Buzz");
-      setNum(val);
-    } else {
-      setTxt(val);
-      setNum(val);
-    }
+  const gameLogic = useCallback(
+    (val) => {
+      let text = val;
 
-    const newState = [...results, { text: txt, result: num }];
+      if (val % 3 === 0 && val % 5 === 0) {
+        text = "fizz-buzz";
+      } else if (val % 3 === 0) {
+        text = "Fizz";
+      } else if (val % 5 === 0) {
+        text = "Buzz";
+      }
 
-    setResults(newState);
-    localStorage.setItem("results", JSON.stringify(newState));
-  }
+      const newState = [...results, { text, result: val }];
+
+      setResults(newState);
+      localStorage.setItem("results", JSON.stringify(newState));
+    },
+    [results]
+  );
 
   return (
     <div>
       <Title />
       <SearchBar logic={gameLogic} />
-      <Result results={txt} />
+      <Result results={results} />
       <History resultsList={results} />
     </div>
   );
